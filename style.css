@@ -1,12 +1,11 @@
 * {
-  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  font-family: "Roboto", sans-serif;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -14,10 +13,10 @@ body {
 }
 
 .container {
-  height: 100vh;
   width: 90%;
 
   display: flex;
+  position: relative;
 }
 
 /* Navbar */
@@ -30,6 +29,10 @@ body {
   flex-direction: column;
   align-items: stretch;
   flex-wrap: wrap;
+
+  position: fixed;
+  top: 0;
+  left: 50px;
 }
 
 .menu {
@@ -107,13 +110,12 @@ body {
 .menu-profile {
   width: 200px;
   padding: 10px;
-  margin-left: 50px;
   margin-top: 40px;
 }
 
 .profile {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -152,9 +154,15 @@ body {
 /* Tweet section */
 
 .main {
+  position: absolute;
+  top: 0;
+  left: 350px;
+  /* overflow-y: scroll; */
+
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: 630px;
+  width: auto;
   border-right: 1px solid rgba(241, 241, 241, 0.2);
   border-left: 1px solid rgba(241, 241, 241, 0.2);
 }
@@ -184,6 +192,7 @@ body {
 }
 
 .tweet-field {
+  width: 100%;
   display: flex;
   align-items: center;
   border-bottom: 1px solid rgba(241, 241, 241, 0.2);
@@ -257,12 +266,15 @@ input::placeholder {
 /* Feed */
 
 .feed {
+  width: 100%;
   display: flex;
+  flex-direction: column;
 }
 
 .post {
   padding: 12px;
   display: flex;
+  border-bottom: 1px solid rgba(241, 241, 241, 0.2);
 }
 
 .profile-id {
@@ -310,6 +322,7 @@ input::placeholder {
 
 .post-img-div {
   margin-top: 16px;
+  color: rgb(107, 107, 107);
 }
 
 .post-img {
@@ -319,10 +332,61 @@ input::placeholder {
   border-radius: 11px;
 }
 
+.post-icon-container {
+  margin-top: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-post-action {
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.action-count {
+  font-size: 14px;
+}
+
+.icon-container:hover {
+  color: #177ec2;
+}
+
+.icon-container:hover .icon-post-action {
+  background-color: rgba(29, 155, 240, 0.2);
+}
+
+.icon-container-retweet:hover {
+  color: rgba(83, 209, 125, 0.7);
+}
+
+.icon-container-retweet:hover .icon-post-action {
+  background-color: rgba(83, 209, 125, 0.2);
+}
+
+.icon-container-like:hover {
+  color: rgb(214, 85, 85);
+}
+
+.icon-container-like:hover .icon-post-action {
+  background-color: rgba(214, 85, 85, 0.2);
+}
+
 /* Aside */
 .aside {
   margin-left: 12px;
   padding: 8px 15px 5px 15px;
+
+  position: fixed;
+  top: 0;
+  right: 90px;
 }
 
 .search {
